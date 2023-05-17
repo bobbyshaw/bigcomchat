@@ -124,6 +124,10 @@ a {
   color: #2A006F;
 }
 
+li {
+  line-height: 30px;
+}
+
 
 button,
 .button {
