@@ -88,7 +88,7 @@ body {
 }
 
 .container {
-    max-width: 1250px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -388,6 +388,7 @@ footer a.logo:hover {
         background-size: 500px;
         padding-right: 400px;
         margin-left: 9em;
+        padding-left: 0;
     }
 
     .join-us h3 {
