@@ -88,7 +88,7 @@ body {
 }
 
 .container {
-    max-width: 1024px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
@@ -202,10 +202,11 @@ button:hover::before,
 }
 
 .join-us {
-    margin: 2em 0 8em;
+    margin: 2em auto 8em;
     padding-top: 75vw;
     background: url('./img/header-girl-mobile.png') 0 0 no-repeat;
     background-size: 100vw;
+    max-width: 1024px;
 }
 
 .join-us h3 {
@@ -331,10 +332,10 @@ footer a.logo:hover {
 
     .join-us {
         background: url('./img/header-girl.png') 100% 50% no-repeat;
-        background-size: 55vw;
+        background-size: 50vw;
         padding-top: 5em;
         padding-bottom: 5em;
-        padding-right: 50vw;
+        padding-right: 45vw;
     }
 
     .join-us h3 {
@@ -367,8 +368,8 @@ footer a.logo:hover {
     }
 
     .why-slack {
-
         padding-top: 0;
+        padding-bottom: 2em;
         padding-left: 50vw;
         background-size: 45vw;
     }
@@ -386,6 +387,7 @@ footer a.logo:hover {
     .join-us {
         background-size: 500px;
         padding-right: 400px;
+        margin-left: 9em;
     }
 
     .join-us h3 {
