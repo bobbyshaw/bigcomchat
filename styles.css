@@ -94,8 +94,7 @@ body {
 
 .top-bar,
 header .title,
-section,
-footer {
+section {
     padding: 0 2em;
 }
 
@@ -118,16 +117,17 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 1.75rem;
     line-height: 1.14;
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 section {
@@ -136,6 +136,11 @@ section {
 
 a {
     color: var(--dark-purple);
+    transition: color 0.1s ease-in-out;
+}
+
+a:hover {
+    color: var(--blue);
 }
 
 li {
@@ -150,17 +155,38 @@ button,
     padding: 8px 40px;
     border-radius: 10px;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    position: relative;
     font-weight: 400;
+    z-index: 1;
+}
+
+button::before,
+.button::before {
+    content: '';
+    background: linear-gradient(180deg, var(--blue) 0%, var(--purple) 100%);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
 }
 
 button:hover,
 .button:hover {
-    background: linear-gradient(180deg, var(--blue) 0%, var(--purple) 100%);
+    color: white;
+}
+
+button:hover::before,
+.button:hover::before {
+    opacity: 1;
 }
 
 .logo {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 900;
     text-decoration: none;
 }
@@ -169,6 +195,10 @@ button:hover,
     background: linear-gradient(var(--blue), var(--purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.logo:hover {
+    color: var(--dark-purple);
 }
 
 .join-us {
@@ -181,6 +211,7 @@ button:hover,
 .join-us h3 {
     margin: 0 0 0.8em 0;
     max-width: 30rem;
+    font-size: 1.75rem;
 }
 
 .join-us .button {
@@ -189,35 +220,40 @@ button:hover,
     max-width: 185px;
 }
 
+.benefits {
+    text-align: center;
+}
+
 .benefits ul {
     padding: 0;
     margin: 2em 0;
 }
 
 .benefits li {
+    font-size: 1.125rem;
     list-style: none;
     max-width: 300px;
-    margin: 3em 0;
+    margin: 3em auto;
     padding-top: 4em;
 }
 
 .benefits .benefits--forum {
-    background: url('./img/forum.svg') 0 0 no-repeat;
+    background: url('./img/forum.svg') 50% 0 no-repeat;
     background-size: 48px;
 }
 
 .benefits .benefits--news {
-    background: url('./img/news.svg') 0 0 no-repeat;
+    background: url('./img/news.svg') 50% 0 no-repeat;
     background-size: 44px;
 }
 
 .benefits .benefits--private {
-    background: url('./img/private.svg') 0 0 no-repeat;
+    background: url('./img/private.svg') 50% 0 no-repeat;
     background-size: 53px;
 }
 
 .benefits .benefits--watercooler {
-    background: url('./img/watercooler.svg') -7px 0 no-repeat;
+    background: url('./img/watercooler.svg') calc(50%) 0 no-repeat;
     background-size: 45px;
 }
 
@@ -293,14 +329,6 @@ footer a.logo:hover {
         font-size: 32px;
     }
 
-    .top-bar,
-    header .title,
-    section,
-    footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     .join-us {
         background: url('./img/header-girl.png') 100% 50% no-repeat;
         background-size: 55vw;
@@ -310,7 +338,11 @@ footer a.logo:hover {
     }
 
     .join-us h3 {
-        font-size: 2.1875rem;
+        font-size: 2.81rem;
+    }
+
+    .benefits {
+        text-align: left;
     }
 
     .benefits ul {
@@ -318,6 +350,16 @@ footer a.logo:hover {
         grid-template-columns: 1fr 1fr;
         margin: 0 auto;
         max-width: 800px;
+    }
+
+    .benefits .benefits--forum,
+    .benefits .benefits--news,
+    .benefits .benefits--private {
+        background-position: 0 0;
+    }
+
+    .benefits .benefits--watercooler {
+        background-position: -7px 0;
     }
 
     .benefits h2 {
@@ -340,7 +382,7 @@ footer a.logo:hover {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .join-us {
         background-size: 500px;
         padding-right: 400px;
@@ -360,5 +402,8 @@ footer a.logo:hover {
         background-size: 250px;
         padding-left: 480px;
     }
-}
 
+    footer ul {
+        padding: 0 2em;
+    }
+}
